@@ -5,20 +5,22 @@
 # Copyright (c) 2014-2015, Lars Asplund lars.anders.asplund@gmail.com
 
 from os.path import join, dirname
+import sys
+#sys.path.append("/home/phrfp/Workspace/vunit/")
 from vunit import VUnit
 
 root = dirname(__file__)
 
 ui = VUnit.from_argv()
 
-	
+
 
 
 lib = ui.add_library("lib")
 
 lib.add_source_files(join(root, "src", "*.vhd"))
 lib.add_source_files(join(root, "src", "test", "*.vhd"))
-ui.set_compile_option("ghdl.flags", ["--std=93"])
+#ui.set_compile_option("ghdl.flags", ["--std=93"])
 
 
 

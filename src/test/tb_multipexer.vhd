@@ -30,7 +30,7 @@ begin
 
 
   main : process
-    
+
     procedure run_test is
     begin
       wait until rising_edge(clk);
@@ -47,7 +47,7 @@ begin
   begin
 
     test_runner_setup(runner, runner_cfg);
-    run_test
+    run_test;
     test_runner_cleanup(runner);
     wait;
   end process;
@@ -57,11 +57,9 @@ begin
     wait until start and rising_edge(clk);
     stimuli_done <= false;
 
-    input_data <= "1101"
+    input_data <= "1101";
     sel <= "01";
 
-    wait until rising_edge(clk);
-    
     stimuli_done <= true;
   end process;
 
@@ -75,7 +73,7 @@ begin
 
   clk <= not clk after 1 ns;
 
-  dut : entity work.multiplexer  
+  dut : entity work.multiplexer
     port map (
       clk => clk,
       sel => sel,
